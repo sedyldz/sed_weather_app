@@ -62,10 +62,11 @@ app.get('/help/*', (req,res) => {
     })
 })
 
+/*
 app.get('/products', (req,res) => {
     if(!req.query.search){
       return  res.send({
-            error: 'You have to serach for a place'
+            error: 'You have to search for a product'
         })
     }
 
@@ -75,11 +76,12 @@ app.get('/products', (req,res) => {
     })
 
 })
+*/
 
 app.get('/weather', (req, res) => {
     if(!req.query.address){
         return res.send({
-            error: 'You have to serach for a place'
+            error: 'Please search for a place'
         })
     }
 
