@@ -35,37 +35,37 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Merhaba',
+        title: 'Hello',
         name: 'sed'
     })
 })
 
 app.get('/about', (req,res) => {
     res.render('about', {
-        title: 'Nedir',
+        title: 'About',
         name: 'sed'
     })
 })
 
 app.get('/help', (req,res) => {
     res.render('help', {
-        title: 'Yardım',
-        message: 'Nasıl yardımcı olabilirim?',
+        title: 'Help',
+        message: 'Some useful text',
         name: 'sed'
     })
 })
 
 app.get('/help/*', (req,res) => {
     res.render('404',{
-        title: 'Üzgünüz',
-        errorMessage: 'Bir şey bulamadık'
+        title: 'Sorry',
+        errorMessage: 'We did not want you to end here :('
     })
 })
 
 app.get('/products', (req,res) => {
     if(!req.query.search){
       return  res.send({
-            error: 'Bir şey aramalısın'
+            error: 'You have to serach for a place'
         })
     }
 
@@ -79,7 +79,7 @@ app.get('/products', (req,res) => {
 app.get('/weather', (req, res) => {
     if(!req.query.address){
         return res.send({
-            error: 'Bir yer ismi yazmalısınız'
+            error: 'You have to serach for a place'
         })
     }
 
@@ -108,8 +108,8 @@ app.get('/weather', (req, res) => {
 //match anything that hasnt match before
 app.get('*',(req, res) => {
     res.render('404',{
-        title: 'Üzgünüz',
-        errorMessage: 'burada bişey bulamadık'
+        title: 'Sorry',
+        errorMessage: 'Nothing much here'
     })
 })
 
